@@ -592,7 +592,7 @@ th {
   color: #0d1d3a;
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
   padding: 15px;
   background-color: #ebd398;
@@ -613,6 +613,8 @@ table {
 td {
   color: #000;
   background: #d9d9d9;
+  font-size: 16px;
+  font-weight: 500;
   padding: 15px;
 }
 .buying-rate p i {
@@ -1544,7 +1546,7 @@ p.min-height {
 .contact-form .form-group .form-control {
   border-radius: 0;
   height: 44px;
-  background: #eed5d2;
+  background: #fffefe;
   box-shadow: none;
   outline: none;
   font-size: 16px;
@@ -1634,7 +1636,7 @@ p.min-height {
   text-align: center;
   padding: 67px 0;
   color: #fff;
-  background: #b8565f;
+  background: #ad8536 !important;
   margin-bottom: 0;
   position: relative;
 }

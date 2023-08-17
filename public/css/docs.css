@@ -89,7 +89,7 @@ img {
 .btn-primary {
   height: 40px;
   border-radius: 0;
-  background-color: #b8565f;
+  background-color: #ad8536;
   color: #fff;
   font-size: 16px;
   text-align: center;
@@ -584,7 +584,7 @@ header .container {
   text-align: center;
   padding: 67px 0;
   color: #fff;
-  background: #16184b;
+  background: #ad8536;
   margin-bottom: 0;
 }
 .inner-banner h1 {
@@ -2252,7 +2252,7 @@ section.blog .blog-information.blog-b {
   border-bottom: none;
 }
 .blog .socail-media-deatil ul.social-media li:hover .fa {
-  color: #b8565f;
+  color: #16184b;
 }
 .blog-sections .blog-content .blog-info h4.blog-title {
   min-height: 112px;
@@ -3529,7 +3529,7 @@ footer.inner-footer.footer::before {
 }
 .slick-dots li.slick-active button:before {
   opacity: 1;
-  color: #b8565f;
+  color: #ad8536;
 }
 
 .contact-details .follow-us-social-media > a {
@@ -3538,16 +3538,15 @@ footer.inner-footer.footer::before {
   width: 38px;
   height: 38px;
   line-height: 38px !important;
-  color: #b8565f !important;
+  color: #ad8536 !important;
   background-color: #fff;
-  border: 1px solid #b85760;
+  border: 1px solid #ad8536;
   font-size: 18px;
   padding: 0;
   border-radius: 100%;
 }
 .contact-details .follow-us-social-media > a:hover {
-  background-color: #b8565f !important;
-  border-color: #b8565f !important;
+  background-color: #16184b;
   color: #fff !important;
 }
 .contact-details .follow-us-social-media > a:last-child {
@@ -3565,7 +3564,7 @@ footer.inner-footer.footer::before {
   text-align: center;
   margin: 0 auto;
   border-radius: 100%;
-  background-color: #b8565f;
+  background-color: #ad8536;
   color: #fff;
   font-size: 0;
   border: 0;
