@@ -480,7 +480,7 @@ header .container {
   top: 0;
   height: 5px;
   width: 60px;
-  background: #b8565f;
+  background: #16184b;
   border-radius: 5px;
 }
 .banner-content p {
@@ -573,7 +573,7 @@ header .container {
 .banner .country label.error {
   position: relative;
   top: 0;
-  color: #b75660;
+  color: #16184b;
   font-size: 16px;
 }
 .banner .btn-row {
@@ -584,7 +584,7 @@ header .container {
   text-align: center;
   padding: 67px 0;
   color: #fff;
-  background: #b8565f;
+  background: #16184b;
   margin-bottom: 0;
 }
 .inner-banner h1 {
@@ -627,13 +627,13 @@ header .container {
   top: -60px;
   z-index: -1;
 }
-.section h2 {
+.h2 {
   position: relative;
   padding-top: 28px;
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
   font-weight: bold;
-  color: #b8565f;
+  color: #16184b;
   line-height: normal;
 }
 .section h2::after {
@@ -643,7 +643,7 @@ header .container {
   top: 0;
   height: 5px;
   width: 52px;
-  background: #b8565f;
+  background: #16184b;
   border-radius: 90px;
 }
 /* .section h2{ font-size: 36px; font-weight: 700; line-height: 48px; position: relative; padding-top: 26px; margin-bottom: 50px; color: #b85760;}
@@ -3862,11 +3862,11 @@ footer.inner-footer.footer::before {
   font-size: 18px;
 }
 .contact-vault-keeper ul.nav.nav-tabs li.active a {
-  border-bottom: 3px solid #b8565f;
+  border-bottom: 3px solid #ad8536;
   background: #fff;
 }
 .contact-vault-keeper ul.nav.nav-tabs a:hover {
-  border-bottom: 3px solid #b8565f;
+  border-bottom: 3px solid #ad8536;
   color: #77787a;
   background: #fff;
 }

@@ -223,7 +223,10 @@ table {
 .banner-section {
   position: relative;
   padding: 84px 0 145px 0;
-  background: #ad8536;
+}
+.banner-items {
+  padding: 3em 2em;
+  background-color: #ad8536;
 }
 
 /* .banner-section::before {
@@ -239,7 +242,7 @@ table {
         width: 100%;
         height: 819px;
     } */
-
+/* 
 .banner-section::before {
   content: "";
   position: absolute;
@@ -251,13 +254,13 @@ table {
   background-position: bottom center;
   width: 100%;
   height: 319px;
-}
+} */
 
 .banner-head-info {
   max-width: 450px;
 }
 
-.banner-head-info h1::before {
+/* .banner-head-info h1::before {
   content: "";
   position: absolute;
   left: 0;
@@ -266,7 +269,7 @@ table {
   width: 52px;
   background: #fff;
   border-radius: 90px;
-}
+} */
 
 .banner-head-info h1 {
   position: relative;
@@ -527,71 +530,107 @@ table {
   padding: 25px;
   margin: 0 0 22px 0;
 }
-
-.buying-price {
-  float: left;
-  position: relative;
+.sell-gold {
+  border-radius: 10px;
+  background: #ebd398;
 }
-
-.buy-price-title {
-  position: relative;
-  padding-left: 67px;
-}
-
-.buy-price-title h4 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 22px;
-  color: #e6b848;
-  margin-bottom: 2px;
-}
-
-.buy-price-title p {
-  display: inline-block;
-  padding: 0 8px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 12px;
+.sell-gold h3 span:nth-child(odd) {
   font-weight: 600;
-  color: #e6b848;
-  border: 2px solid #16184b;
-  border-radius: 4px;
 }
-
-.buy-price-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
+.sell-gold h3 span {
+  display: inline;
+  margin: 8px;
+  font-weight: 900;
+  color: #000;
 }
-
-.buy-price-icon img {
-  width: 52px;
+.sell-gold-items {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #2a2c73;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-.buying-rate {
-  float: right;
+.sell-gold-items p {
+  font-size: 16px;
+  color: white;
+  margin: 3px;
 }
-
-.buying-rate h4 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+.buy-gold {
+  border-radius: 10px;
+  background: #ebd398;
+}
+.buy-gold h3 span:nth-child(odd) {
   font-weight: 600;
-  line-height: 26px;
-  color: #808080;
-  margin-bottom: 0;
+}
+.buy-gold h3 span {
+  display: inline;
+  margin: 8px;
+  font-weight: 900;
+  color: #000;
+}
+.buy-gold-items {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #2a2c73;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buy-gold-items p {
+  font-size: 16px;
+  color: white;
+  margin: 3px;
+}
+.table-items {
+  margin: 20px;
+  width: 100%;
+}
+th {
+  color: #0d1d3a;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 15px;
+  background-color: #ebd398;
+}
+table,
+td,
+th {
+  border: 2px solid #f1efef;
+  text-align: left;
 }
 
-.buying-rate p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  color: #808080;
+table {
+  border-collapse: separate;
+  width: 100%;
+  border-radius: 5px;
 }
 
+td {
+  color: #000;
+  background: #d9d9d9;
+  padding: 15px;
+}
 .buying-rate p i {
   font-size: 16px;
 }
-
+@media screen and (max-width: 600px) {
+  .table-items {
+    margin: 0px;
+  }
+  td {
+    padding: 5px;
+    font-size: 12px;
+  }
+  th {
+    padding: 5px;
+    font-size: 13px;
+  }
+}
 .buying-rate p i.down {
   color: #16184b;
   vertical-align: text-bottom;
@@ -689,12 +728,12 @@ table {
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
   font-weight: bold;
-  color: white;
+  color: #16184b;
   line-height: normal;
 }
 
 .section-title.with-line {
-  padding-top: 28px;
+  padding-top: 25px;
 }
 
 .section-title.with-line::before {
@@ -704,7 +743,7 @@ table {
   top: 0;
   height: 5px;
   width: 52px;
-  background: #e6b848;
+  background: white;
   border-radius: 90px;
 }
 
@@ -902,7 +941,7 @@ iframe.embed-responsive-item {
 }
 
 .abt-us-section {
-  background-color: #16184b;
+  background-color: white;
   padding: 117px 0 107px 0;
 }
 
@@ -937,7 +976,7 @@ iframe.embed-responsive-item {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: #bebcbc;
+  color: #000;
   display: inline-block;
   margin-top: 10px;
   padding: 9px 27px;
@@ -1011,9 +1050,8 @@ iframe.embed-responsive-item {
 .gold-buy-section {
   /* padding: 125px 0 117px 0; */
   background-color: white;
-  padding: 68px 0;
+  padding: 68px;
 }
-
 .gold-buy-section .section-title {
   margin-bottom: 40px;
 }
@@ -1485,7 +1523,7 @@ p.min-height {
 }
 
 .contact-details p > a:hover {
-  color: #b85660;
+  color: #16184b;
 }
 
 .contact-form {
@@ -1499,7 +1537,7 @@ p.min-height {
 .contact-form .form-group label {
   font-size: 16px;
   font-weight: bold;
-  color: #b85760;
+  color: #16184b;
   text-transform: capitalize;
 }
 
@@ -1519,7 +1557,7 @@ p.min-height {
 }
 
 .help-center-info {
-  background-color: #b85760;
+  background-color: #ad8536;
   padding: 65px 0;
   background-image: url("../images/helpcenter-gold-img.png");
   background-position: right top;
@@ -1952,7 +1990,7 @@ p.min-height {
     max-width: 100%;
   }
   .banner-section {
-    background-color: #b8565f;
+    background-color: #ad8536;
   }
   .banner-head-info h1 {
     font-size: 32px;
