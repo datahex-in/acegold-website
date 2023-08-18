@@ -30,7 +30,7 @@ h1 {
   font-size: 50px;
   line-height: 58px;
   margin: 0 0 20px 0;
-  color: #b75660;
+  color: #000;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
 }
@@ -147,7 +147,7 @@ img {
 }
 .right-header .cart i {
   font-size: 30px;
-  color: #b8565f;
+  color: #16184b;
   line-height: 40px;
 }
 .right-header .dropdown {
@@ -350,8 +350,8 @@ header .container {
 .checkbox-col label:after {
   height: 6px;
   width: 10px;
-  border-left: 2px solid #b8565f;
-  border-bottom: 2px solid #b8565f;
+  border-left: 2px solid #ad8536;
+  border-bottom: 2px solid #ad8536;
   left: 4px;
   top: 7px;
   transform: rotate(-45deg);
@@ -364,10 +364,10 @@ header .container {
 }
 .checkbox-col label a {
   text-decoration: underline;
-  color: #b8565f;
+  color: #ad8536;
 }
 .checkbox-col label a:hover {
-  color: #b8565f;
+  color: #ad8536;
 }
 .checkbox-col input[type="checkbox"]:checked + label:after {
   opacity: 1;
@@ -379,7 +379,7 @@ header .container {
   bottom: -10px;
   width: 60px;
   height: 4px;
-  background: #b8565f;
+  background: #ad8536;
   content: "";
   margin-left: -30px;
   -webkit-border-radius: 4px;
@@ -395,7 +395,7 @@ header .container {
   line-height: 35px;
   color: #fff;
   font-size: 30px;
-  background-color: #b8565f;
+  background-color: #16184b;
   position: absolute;
   right: 6px;
   top: 8px;
@@ -422,7 +422,7 @@ header .container {
   clear: both;
 }
 .already-account i {
-  color: #b8565f;
+  color: #16184b;
 }
 .navbar-nav {
   margin-top: 0;
@@ -677,7 +677,7 @@ header .container {
   margin-top: 10px;
 }
 .investments {
-  background-color: #b85660;
+  background-color: #ad8536;
   padding: 140px 0 130px;
   position: relative;
   color: #fff;
@@ -1092,7 +1092,7 @@ header .container {
   left: 36px;
   top: 0;
   content: "";
-  background-color: #b85760;
+  background-color: #16184b;
 }
 .how-works .nav-pills li {
   width: 100%;
@@ -1104,7 +1104,7 @@ header .container {
 .how-works .nav-pills li:focus a,
 .how-works .nav-pills li:hover a {
   display: block;
-  color: #b85660;
+  color: #16184b;
   background: none;
 }
 .how-works .nav-pills li .icon {
@@ -1114,7 +1114,7 @@ header .container {
   left: 0;
   top: 0;
   z-index: 11;
-  border: 2px solid #b85760;
+  border: 2px solid #16184b;
   background: #fff;
   text-align: center;
   line-height: 70px;
@@ -1127,7 +1127,7 @@ header .container {
 .how-works .nav-pills li a {
   display: inline-block;
   font-size: 29px;
-  color: #b85660;
+  color: #16184b;
   padding-left: 114px;
   text-decoration: none;
   background: none;
@@ -1138,7 +1138,7 @@ header .container {
 }
 .how-works .nav-pills li p {
   font-size: 13px;
-  color: #b85660;
+  color: #16184b;
   line-height: 16px;
   margin: 0;
   font-weight: 500;
@@ -1147,7 +1147,7 @@ header .container {
 }
 .how-works .nav-pills li span {
   font-size: 13px;
-  color: #b85660;
+  color: #16184b;
   line-height: 16px;
   margin: 0;
   font-weight: 500;
@@ -1159,7 +1159,7 @@ header .container {
 .how-works .nav-pills > li.active > a:focus,
 .how-works .nav-pills > li.active > a:hover {
   display: block;
-  color: #b85660;
+  color: #16184b;
   text-decoration: none;
   background: none;
 }
@@ -4513,6 +4513,7 @@ footer.inner-footer.footer::before {
   .app-download-title h3 {
     font-size: 26px;
   }
+
   .footer-part {
     padding-top: 50px;
   }

@@ -817,7 +817,7 @@
         <![endif]-->
             <script src='../www.google.com/recaptcha/api.js'></script>
         <script type="text/javascript">
-        var playstore_link = "https://play.google.com/store/apps/details?id=com.amrapali.digigoldapp";
+        var playstore_link = "https://play.google.com/store/apps/details?id=com.aiwwah.app.acegold&pcampaignid=web_share";
         var appstore_link = "https://apps.apple.com/in/app/digigold/id1572431498";
     </script>
 
@@ -867,7 +867,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <h3><span>OZ</span> <span>SELL</span><span>USD</span></h3>
               <div class="sell-gold-items">
                 <p>GOLD</p>
-                <p style="color: #18AE4B; font-size: 20px;font-weight: 600;">1803.30</p>
+                <p id="data-container" style=" font-size: 20px;font-weight: 600;">---</p>
                 <p>High - 1,812.30</p>
               </div>
             </div>
@@ -884,6 +884,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
       </div>
+      
+      <script>
+        let ws = new WebSocket('wss://stream.binance.com:9443/ws/etheur@trade');
+        let stockPrice = document.getElementById('data-container');
+        let lastPrice = null;
+    
+        ws.onmessage = (event) => {
+          console.log(event.data);
+          let stockObject = JSON.parse(event.data);
+          let price = parseFloat(stockObject.p).toFixed(2);
+          stockPrice.innerText = price;
+    
+          if (!lastPrice || lastPrice === price) {
+            stockPrice.style.color = 'white';
+          } else if (price > lastPrice) {
+            stockPrice.style.color = 'green';
+          } else {
+            stockPrice.style.color = 'red';
+          }
+    
+          lastPrice = price;
+        };
+      </script>
+
+
             <form method="POST" action="https://www.digigold.com/buygold/confirm" accept-charset="UTF-8" id="buy-gold-form" class="quick-action-form" enctype="multipart/form-data"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
                 <div class="gold-buying">
                     <div class="buying-input">

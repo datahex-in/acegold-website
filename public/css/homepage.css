@@ -398,7 +398,7 @@ table {
 
 .selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
   color: #ffffff;
-  background: #a6454f;
+  background: #ad8536;
 }
 
 .selectboxit-container
@@ -463,11 +463,17 @@ table {
 }
 
 .buy-gold-silver {
-  background: #fff;
+  background: transparent;
+  background: rgba(241, 239, 239, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(241, 236, 236, 0.18);
   border-radius: 20px;
   overflow: hidden;
   padding: 30px;
-  box-shadow: 1px 2px 20px 0 rgb(81 80 80 / 37%);
+  box-shadow: 1px 2px 20px 0 rgba(152, 149, 149, 0.37);
   margin-left: 40px;
 }
 
@@ -620,9 +626,29 @@ td {
 .buying-rate p i {
   font-size: 16px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+  :is(.buy-gold-items p, .sell-gold-items p) {
+    font-size: 14px;
+  }
+  .sell-gold h3 span {
+    display: inline;
+    margin: 10px;
+    font-weight: 900;
+    color: #000;
+  }
+  .buy-gold h3 span {
+    display: inline;
+    justify-content: center;
+    margin: 10px;
+    font-weight: 900;
+    color: #000;
+  }
+  .buy-gold {
+    margin-top: 10px;
+  }
   .table-items {
     margin: 0px;
+    margin-top: 10px;
   }
   td {
     padding: 5px;
@@ -631,6 +657,15 @@ td {
   th {
     padding: 5px;
     font-size: 13px;
+  }
+}
+@media (min-width: 760px) and (max-width: 1000px) {
+  .buy-gold {
+    margin-top: 10px;
+  }
+  .table-items {
+    margin: 0px;
+    width: 100%;
   }
 }
 .buying-rate p i.down {
@@ -1771,7 +1806,11 @@ p.min-height {
     padding: 15px 10px;
   }
 }
-
+@media screen and (max-width: 765px) {
+  .navbar {
+    background: #16184b;
+  }
+}
 @media screen and (min-width: 768px) {
   /*--override navmenu--*/
   header {
@@ -1928,7 +1967,8 @@ p.min-height {
 @media screen and (max-width: 767px) {
   .btn-action-buy .btn,
   .btn-white {
-    font-size: 16px;
+    font-size: 14px;
+    margin-top: 8px;
   }
   .banner-section,
   .service-section,
