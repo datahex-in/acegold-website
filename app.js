@@ -5,10 +5,10 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var WebSocket = require("ws");
 
-var indexRouter = require("./routes/index");
+var indexRouter = require("./routes/index").default;
 var usersRouter = require("./routes/users");
-var contactRouter = require("./routes/contact");
-var aboutRouter = require("./routes/about");
+var contactRouter = require("./routes/contact").default;
+var aboutRouter = require("./routes/about").default;
 var app = express();
 
 // view engine setup

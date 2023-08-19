@@ -1,11 +1,11 @@
-var express = require("express");
-var router = express.Router();
-var axios = require("axios");
+import { Router } from "express";
+var router = Router();
+import { get } from "axios";
 
 /* GET home page. */
 router.get("/", async function (req, res, next) {
   try {
-    const response = await axios.get(
+    const response = await get(
       "https://securtity-website.azurewebsites.net/api/v1/our-service"
     );
     const data = response.data; // Extract the data from the response
@@ -19,4 +19,4 @@ router.get("/", async function (req, res, next) {
     next(error); // Pass the error to Express error handler
   }
 });
-module.exports = router;
+export default router;
