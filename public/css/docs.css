@@ -30,7 +30,7 @@ h1 {
   font-size: 50px;
   line-height: 58px;
   margin: 0 0 20px 0;
-  color: #b75660;
+  color: #000;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
 }
@@ -89,7 +89,7 @@ img {
 .btn-primary {
   height: 40px;
   border-radius: 0;
-  background-color: #b8565f;
+  background-color: #ad8536;
   color: #fff;
   font-size: 16px;
   text-align: center;
@@ -147,7 +147,7 @@ img {
 }
 .right-header .cart i {
   font-size: 30px;
-  color: #b8565f;
+  color: #16184b;
   line-height: 40px;
 }
 .right-header .dropdown {
@@ -350,8 +350,8 @@ header .container {
 .checkbox-col label:after {
   height: 6px;
   width: 10px;
-  border-left: 2px solid #b8565f;
-  border-bottom: 2px solid #b8565f;
+  border-left: 2px solid #ad8536;
+  border-bottom: 2px solid #ad8536;
   left: 4px;
   top: 7px;
   transform: rotate(-45deg);
@@ -364,10 +364,10 @@ header .container {
 }
 .checkbox-col label a {
   text-decoration: underline;
-  color: #b8565f;
+  color: #ad8536;
 }
 .checkbox-col label a:hover {
-  color: #b8565f;
+  color: #ad8536;
 }
 .checkbox-col input[type="checkbox"]:checked + label:after {
   opacity: 1;
@@ -379,7 +379,7 @@ header .container {
   bottom: -10px;
   width: 60px;
   height: 4px;
-  background: #b8565f;
+  background: #ad8536;
   content: "";
   margin-left: -30px;
   -webkit-border-radius: 4px;
@@ -395,7 +395,7 @@ header .container {
   line-height: 35px;
   color: #fff;
   font-size: 30px;
-  background-color: #b8565f;
+  background-color: #16184b;
   position: absolute;
   right: 6px;
   top: 8px;
@@ -422,7 +422,7 @@ header .container {
   clear: both;
 }
 .already-account i {
-  color: #b8565f;
+  color: #16184b;
 }
 .navbar-nav {
   margin-top: 0;
@@ -480,7 +480,7 @@ header .container {
   top: 0;
   height: 5px;
   width: 60px;
-  background: #b8565f;
+  background: #16184b;
   border-radius: 5px;
 }
 .banner-content p {
@@ -573,7 +573,7 @@ header .container {
 .banner .country label.error {
   position: relative;
   top: 0;
-  color: #b75660;
+  color: #16184b;
   font-size: 16px;
 }
 .banner .btn-row {
@@ -584,7 +584,7 @@ header .container {
   text-align: center;
   padding: 67px 0;
   color: #fff;
-  background: #b8565f;
+  background: #ad8536;
   margin-bottom: 0;
 }
 .inner-banner h1 {
@@ -627,13 +627,13 @@ header .container {
   top: -60px;
   z-index: -1;
 }
-.section h2 {
+.h2 {
   position: relative;
   padding-top: 28px;
   font-family: "Montserrat", sans-serif;
   font-size: 40px;
   font-weight: bold;
-  color: #b8565f;
+  color: #16184b;
   line-height: normal;
 }
 .section h2::after {
@@ -643,7 +643,7 @@ header .container {
   top: 0;
   height: 5px;
   width: 52px;
-  background: #b8565f;
+  background: #16184b;
   border-radius: 90px;
 }
 /* .section h2{ font-size: 36px; font-weight: 700; line-height: 48px; position: relative; padding-top: 26px; margin-bottom: 50px; color: #b85760;}
@@ -677,7 +677,7 @@ header .container {
   margin-top: 10px;
 }
 .investments {
-  background-color: #b85660;
+  background-color: #ad8536;
   padding: 140px 0 130px;
   position: relative;
   color: #fff;
@@ -1092,7 +1092,7 @@ header .container {
   left: 36px;
   top: 0;
   content: "";
-  background-color: #b85760;
+  background-color: #16184b;
 }
 .how-works .nav-pills li {
   width: 100%;
@@ -1104,7 +1104,7 @@ header .container {
 .how-works .nav-pills li:focus a,
 .how-works .nav-pills li:hover a {
   display: block;
-  color: #b85660;
+  color: #16184b;
   background: none;
 }
 .how-works .nav-pills li .icon {
@@ -1114,7 +1114,7 @@ header .container {
   left: 0;
   top: 0;
   z-index: 11;
-  border: 2px solid #b85760;
+  border: 2px solid #16184b;
   background: #fff;
   text-align: center;
   line-height: 70px;
@@ -1127,7 +1127,7 @@ header .container {
 .how-works .nav-pills li a {
   display: inline-block;
   font-size: 29px;
-  color: #b85660;
+  color: #16184b;
   padding-left: 114px;
   text-decoration: none;
   background: none;
@@ -1138,7 +1138,7 @@ header .container {
 }
 .how-works .nav-pills li p {
   font-size: 13px;
-  color: #b85660;
+  color: #16184b;
   line-height: 16px;
   margin: 0;
   font-weight: 500;
@@ -1147,7 +1147,7 @@ header .container {
 }
 .how-works .nav-pills li span {
   font-size: 13px;
-  color: #b85660;
+  color: #16184b;
   line-height: 16px;
   margin: 0;
   font-weight: 500;
@@ -1159,7 +1159,7 @@ header .container {
 .how-works .nav-pills > li.active > a:focus,
 .how-works .nav-pills > li.active > a:hover {
   display: block;
-  color: #b85660;
+  color: #16184b;
   text-decoration: none;
   background: none;
 }
@@ -1881,9 +1881,9 @@ header .container {
 }
 
 /*--02-09-2020 End--*/
-/* add by pooja */
+/* add by abhijith*/
 .abt-us-section.section .abt-content p a {
-  color: #b85660;
+  color: #16184b;
   text-decoration: none;
 }
 .about-digigold.about.below-section {
@@ -2252,7 +2252,7 @@ section.blog .blog-information.blog-b {
   border-bottom: none;
 }
 .blog .socail-media-deatil ul.social-media li:hover .fa {
-  color: #b8565f;
+  color: #16184b;
 }
 .blog-sections .blog-content .blog-info h4.blog-title {
   min-height: 112px;
@@ -3529,7 +3529,7 @@ footer.inner-footer.footer::before {
 }
 .slick-dots li.slick-active button:before {
   opacity: 1;
-  color: #b8565f;
+  color: #ad8536;
 }
 
 .contact-details .follow-us-social-media > a {
@@ -3538,16 +3538,15 @@ footer.inner-footer.footer::before {
   width: 38px;
   height: 38px;
   line-height: 38px !important;
-  color: #b8565f !important;
+  color: #ad8536 !important;
   background-color: #fff;
-  border: 1px solid #b85760;
+  border: 1px solid #ad8536;
   font-size: 18px;
   padding: 0;
   border-radius: 100%;
 }
 .contact-details .follow-us-social-media > a:hover {
-  background-color: #b8565f !important;
-  border-color: #b8565f !important;
+  background-color: #16184b;
   color: #fff !important;
 }
 .contact-details .follow-us-social-media > a:last-child {
@@ -3565,7 +3564,7 @@ footer.inner-footer.footer::before {
   text-align: center;
   margin: 0 auto;
   border-radius: 100%;
-  background-color: #b8565f;
+  background-color: #ad8536;
   color: #fff;
   font-size: 0;
   border: 0;
@@ -3862,11 +3861,11 @@ footer.inner-footer.footer::before {
   font-size: 18px;
 }
 .contact-vault-keeper ul.nav.nav-tabs li.active a {
-  border-bottom: 3px solid #b8565f;
+  border-bottom: 3px solid #ad8536;
   background: #fff;
 }
 .contact-vault-keeper ul.nav.nav-tabs a:hover {
-  border-bottom: 3px solid #b8565f;
+  border-bottom: 3px solid #ad8536;
   color: #77787a;
   background: #fff;
 }
@@ -4514,6 +4513,7 @@ footer.inner-footer.footer::before {
   .app-download-title h3 {
     font-size: 26px;
   }
+
   .footer-part {
     padding-top: 50px;
   }
