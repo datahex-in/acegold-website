@@ -1,9 +1,9 @@
-import { Router } from "express";
-var router = Router();
+var express = require("express");
+var router = express.Router();
 
 /* GET users listing. */
 router.get("/", function (req, res, next) {
   res.render("contact-us");
 });
 
-export default router;
+module.exports = router;
