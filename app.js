@@ -5,11 +5,12 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var WebSocket = require("ws");
 
-var indexRouter = require("./routes/index").default;
-var usersRouter = require("./routes/users");
-var contactRouter = require("./routes/contact").default;
-var aboutRouter = require("./routes/about").default;
 var app = express();
+
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
+var contactRouter = require("./routes/contact");
+var aboutRouter = require("./routes/about");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -40,5 +41,8 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+const PORT = 3001;
+app.listen(PORT, () => console.log(`running port ${PORT}`));
 
 module.exports = app;
