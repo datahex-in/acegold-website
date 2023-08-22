@@ -636,6 +636,16 @@ header .container {
   color: #16184b;
   line-height: normal;
 }
+.section h2 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  position: relative;
+  padding-top: 26px;
+  margin-bottom: 50px;
+  color: #16184b;
+}
+
 .section h2::after {
   content: "";
   position: absolute;
@@ -646,10 +656,7 @@ header .container {
   background: #16184b;
   border-radius: 90px;
 }
-/* .section h2{ font-size: 36px; font-weight: 700; line-height: 48px; position: relative; padding-top: 26px; margin-bottom: 50px; color: #b85760;}
-.section h2::after{ content: ''; position: absolute; left: 0; top: 0; height: 5px; width: 60px; background: #b8565f;
-    -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px;
-} */
+
 .about-content {
   padding-top: 20px;
   padding-left: 17px;
@@ -751,8 +758,8 @@ header .container {
   border: 1px solid #bbbbbb;
 }
 .value-wealth {
-  background-color: #b85660;
-  padding: 70px 0 40px;
+  background-color: #ad8536;
+  padding: 50px 0 40px;
   position: relative;
   overflow: hidden;
 }
