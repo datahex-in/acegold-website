@@ -3,8 +3,6 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-var WebSocket = require("ws");
-
 var app = express();
 
 var indexRouter = require("./routes/index");
@@ -42,7 +40,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-const PORT = 3001;
+const PORT = 3000;
 app.listen(PORT, () => console.log(`running port ${PORT}`));
 
 module.exports = app;

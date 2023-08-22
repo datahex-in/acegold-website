@@ -11,6 +11,11 @@
     <meta name="description" content="DigiGold is India's most trusted digital platform for gold and silver where you can buy, sell and store online at live market rates." /><meta name="keywords" content="digigold, Buy DigiGold" /><meta property="og:type" content="Artical" /><meta property="og:title" content="DigiGold: Buy, Sell, Gift & SIP in Gold at Lowest Market Price" /><meta property="og:description" content="AceGold is India's most trusted digital platform for gold  where you can buy, sell and store online at live market rates." /><title> AceGold: Buy, Sell, Gift & SIP in Gold at Lowest Market Price | AceGold</title><meta property="og:url" content="index.html" /><meta property="og:site_name" content="www.acegold.com" />
     <meta name="csrf-token" content="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
             <!-- Google Tag Manager -->
+
+
+            <!-- <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script> -->
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.js" integrity="sha512-ttqbKrGZiTtSLguBZ2xNvZrhUv02IO/TRq5U6TG5TK90wbaXWup5kIJ1A1tLzjOk5Mea/G4seVNrU+lwTLfAzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             (function(w, d, s, l, i) {
                 w[l] = w[l] || [];
@@ -844,11 +849,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="row">
 <div class="col-lg-7 col-md-6">
 <div class="banner-head-info">
-  <h4 class="section-title with-line"> <%= data.response[0].title %>
+  <h4 class="section-title with-line">About Us
 </h4>
  
-<h1 class="head-title"><%=data.response[0].features%></h1>
-<p><span>We at DIGIGOLD want to make your Gold &amp; Silver journey Simple, Transparent, and Digital.&nbsp;</span><span></span><span></span></p>
+<h1 class="head-title">
+    
+    India’s Most Trusted Digital Platform for Gold
+</h1>
+<p><span>We at DIGIGOLD want to make your Gold journey Simple, Transparent, and Digital.&nbsp;</span><span></span><span></span></p>
 <div class="btn-group-row"><form method="POST" action="#" id="send-sms-form" class="">
 <div class="mobile-number-input"><label for="std_code" class="std_code"><select class="country country-code-select country country-code-select " name="std_code" id="std_code"><option value="91" data-iconurl="https://www.countryflags.io/IN/shiny/64.png" data-iso="IN" selected="selected">+91</option></select></label> <input type="text" name="home_get_app_number" maxlength="10" id="home_get_app_number" autocomplete="off" required="true" placeholder="Enter Mobile No." /></div>
 <button type="submit" id="send_sms_form" class="btn btn-default btn-white btn-get-app"> GET APP</button></form>
@@ -859,7 +867,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="col-lg-5 col-md-6"><div class="buy-gold-silver">
   
     <!-- Tab panes -->
- 
     <div class="container">
         <div class="row">
           <div class="col-xl-6 col-lg-6">
@@ -867,47 +874,103 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <h3><span>OZ</span> <span>SELL</span><span>USD</span></h3>
               <div class="sell-gold-items">
                 <p>GOLD</p>
-                <p id="data-container" style=" font-size: 20px;font-weight: 600;">---</p>
-                <p>High - 1,812.30</p>
+                <p id="data-container2" style="font-size: 20px; font-weight: 600; color: white;">---</p>
+             <div style="display: flex;"> <p>High -</p>  <p id="data-high"></p></div>
               </div>
             </div>
           </div>
-          <div class="col-xl-6 col-lg-6"> 
+          <div class="col-xl-6 col-lg-6">
             <div class="buy-gold">
               <h3><span>OZ</span> <span>BUY</span><span>USD</span></h3>
               <div class="buy-gold-items">
                 <p>GOLD</p>
-                <p style="color: #FA0202; font-size: 20px; font-weight: 600;">1803.30</p>
-                <p>Low - 1,812.30</p>
+                <p id="data-container1" style="color: #FA0202; font-size: 20px; font-weight: 600;">---</p>
+                <div style="display: flex;"> <p>Low -</p>  <p id="data-low"></p></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       
+      <script src="/socket.io/socket.io.js"></script>
       <script>
-        let ws = new WebSocket('wss://stream.binance.com:9443/ws/etheur@trade');
-        let stockPrice = document.getElementById('data-container');
-        let lastPrice = null;
-    
-        ws.onmessage = (event) => {
-          console.log(event.data);
-          let stockObject = JSON.parse(event.data);
-          let price = parseFloat(stockObject.p).toFixed(2);
-          stockPrice.innerText = price;
-    
-          if (!lastPrice || lastPrice === price) {
-            stockPrice.style.color = 'white';
-          } else if (price > lastPrice) {
-            stockPrice.style.color = 'green';
-          } else {
-            stockPrice.style.color = 'red';
-          }
-    
-          lastPrice = price;
-        };
-      </script>
+        const socketUrl = "https://walrus-app-k59sj.ondigitalocean.app?franchiseId=646c8c2d66d5379aede9313f";
+        const socket = io(socketUrl, { transports: ["websocket"], withCredentials: true });
+      
+              
+        
+          //for using  if-else
+        let stockPriceHigh = document.getElementById('data-container1');
+        let lastPriceHigh = null;
+      
+        let stockPriceLow = document.getElementById('data-container2');
+        let lastPriceLow = null;
 
+        socket.on("connect", () => {
+          console.log("Connected to the server");
+        });
+      
+        // Listen for "message" event from the server
+        socket.on("message", (data) => {
+            console.log(data);
+
+
+
+
+         //price-high
+    let dataPriceHigh = document.getElementById('data-high');
+    let highPrice = parseFloat(data.XAUUSD.high).toFixed(2);
+    dataPriceHigh.innerText = highPrice;
+
+         //price-low
+    let dataPriceLow = document.getElementById('data-low');
+    let lowprice = parseFloat(data.XAUUSD.low).toFixed(2);
+    dataPriceLow.innerText =lowprice;
+        
+          //fixed-price high
+    let priceHigh = parseFloat(data.XAUUSD.ask).toFixed(2); // Get the price with 2 decimal places
+    priceHigh = parseFloat(priceHigh).toLocaleString(); // Format the price with comma separator
+    
+
+         // fixed-price low
+    let priceLow = parseFloat(data.XAUUSD.bid).toFixed(2);
+    priceLow=parseFloat(priceLow).toLocaleString();
+          
+        
+          
+          if (!lastPriceHigh || lastPriceHigh === priceHigh) {
+            stockPriceHigh.style.color = 'white';
+          } else if (priceHigh > lastPriceHigh) {
+            stockPriceHigh.style.color = 'green';
+          } else {
+            stockPriceHigh.style.color = 'red';
+          }
+      
+          stockPriceHigh.innerText = priceHigh;
+          lastPriceHigh = priceHigh;
+      
+          if (!lastPriceLow || lastPriceLow === priceLow) {
+            stockPriceLow.style.color = 'white';
+          } else if (priceLow > lastPriceLow) {
+            stockPriceLow.style.color = 'green';
+          } else {
+            stockPriceLow.style.color = 'red';
+          }
+      
+          stockPriceLow.innerText = priceLow;
+          lastPriceLow = priceLow;
+        });
+
+       
+
+      
+        // Handle disconnect event
+        socket.on("disconnect", () => {
+          console.log("Disconnected from the server");
+        });
+      </script>
+      
+    
 
             <form method="POST" action="https://www.digigold.com/buygold/confirm" accept-charset="UTF-8" id="buy-gold-form" class="quick-action-form" enctype="multipart/form-data"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
                 <div class="gold-buying">
@@ -1170,7 +1233,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-<h4 class="section-title with-line">Why DigiGold</h4>
+<h4 class="section-title with-line">Why AceGold</h4>
 </div>
 </div>
 <div class="row why-us-features">
@@ -1234,7 +1297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-<h4 class="section-title with-line">Trending Products</h4>
+<h4 class="section-title with-line">Our Products</h4>
 </div>
 
             <div class="col-md-3 col-sm-6">
@@ -1287,14 +1350,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="container">
 <div class="row">
 <div class="col-md-12">
-<h4 class="section-title with-line">Benefits of DigiGold</h4>
+<h4 class="section-title with-line">Benefits of AceGold</h4>
 </div>
 </div>
 <div class="row">
 <div class="col-md-12">
 <div class="test-monials-content">
 <div class="video embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/DDRf7KNsP5g?rel=0&amp;showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe></div>
-<p style="max-width: 100%;">DigiGold is India&rsquo;s most trusted digital platform for gold and silver where you can buy, sell, gift, sip and store online at live market rates.</p>
+<p style="max-width: 100%;">AceGold is India&rsquo;s most trusted digital platform for gold where you can buy, sell, gift, sip and store online at live market rates.</p>
 </div>
 </div>
 </div>
