@@ -43,16 +43,16 @@ h2 {
 }
 h3 {
   font-size: 24px;
-  line-height: 28px;
+  line-height: 20px;
   margin: 0 0 20px 0;
-  font-weight: 700;
+  font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
 h4 {
   font-size: 20px;
   line-height: 24px;
   margin: 0 0 20px 0;
-  font-weight: 700;
+  font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
 .container {
@@ -673,7 +673,7 @@ header .container {
   color: #808080;
 }
 .our-vision p {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .how-works {
@@ -846,15 +846,7 @@ header .container {
 .partners-slider .slick-dots {
   display: none !important;
 }
-.footer {
-  background: #edd4d1;
-  position: relative;
-}
-.footer .footer-lineimg {
-  position: absolute;
-  right: 100px;
-  bottom: 0;
-}
+
 .gold-investments {
   background: #b85660;
   padding: 35px 60px;
@@ -900,138 +892,6 @@ header .container {
   margin-right: 4px;
 }
 
-.footer-logo {
-  margin-top: 10px;
-  margin-bottom: 30px;
-  display: block;
-}
-.footer-part {
-  padding-top: 50px;
-  position: relative;
-  z-index: 1;
-}
-.footer-part .footer-col {
-  color: #fff;
-}
-.footer-part h4 {
-  font-size: 15px;
-  font-weight: 600;
-  position: relative;
-  line-height: 30px;
-  padding-bottom: 10px;
-  margin-bottom: 18px;
-  color: #16184b;
-}
-.footer-part h4:after {
-  width: 37px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  background: #e7ba48;
-  content: "";
-}
-.footer-part .footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-part .footer-col ul li {
-  width: 100%;
-  float: left;
-  font-weight: 600;
-  padding-bottom: 12px;
-  line-height: 25px;
-}
-.footer-part .footer-col ul li a {
-  color: white;
-  font-size: 15px;
-}
-.footer-part .footer-col ul li a:hover {
-  color: #e7ba48;
-}
-.footer-part .footer-col p {
-  position: relative;
-  font-size: 14px;
-  line-height: 21px;
-  color: #16184b;
-  font-weight: 500;
-  max-width: 302px;
-}
-.footer-part .footer-col p span {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.footer-part .footer-col p a {
-  color: #16184b;
-}
-.footer-part .social-media {
-  float: right;
-  width: 28px;
-  margin-top: 10px;
-}
-.footer-part a {
-  color: #16184b;
-  text-decoration: none;
-}
-.footer-part .social-media a {
-  width: 28px;
-  height: 28px;
-  text-align: center;
-  line-height: 28px;
-  color: #edd4d1;
-  background-color: #16184b;
-  text-decoration: none;
-  margin-bottom: 4px;
-  float: left;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
-}
-.footer-part .contact-us p {
-  font-size: 15px;
-  line-height: 21px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-.footer-part .detail-cols {
-  width: 31%;
-}
-.footer-part .quick-linkscols {
-  width: 18%;
-}
-.footer-part .company-cols {
-  width: 17%;
-}
-.footer-part .contact-cols {
-  width: 27%;
-}
-.footer-part .social-cols {
-  width: 7%;
-}
-.copyright {
-  padding: 22px 0 60px 0;
-  margin-top: 30px;
-  color: #16184b;
-  font-size: 15px;
-  font-weight: 500;
-  position: relative;
-}
-.copyright:before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  content: "";
-  height: 2px;
-  background: #e7ba48;
-  width: 80%;
-}
-.copyright p {
-  margin-bottom: 0;
-}
 .check-row {
   max-width: 320px;
   margin: 0 auto 30px;
