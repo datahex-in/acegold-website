@@ -562,7 +562,7 @@ table {
 #customers th {
   border: none;
   padding: 5px 12px;
-  border-top-left-radius: 3px;
+  /* border-top-left-radius: 3px;+ */
 }
 
 #customers td {
@@ -608,7 +608,7 @@ table {
 @media (min-width: 1000px) {
   #customers td,
   #customers th {
-    padding: 5px 35px;
+    padding: 5px 30px;
   }
   #customers th {
     font-size: 14px;
