@@ -249,6 +249,43 @@ table {
   margin-bottom: 36px;
 }
 
+.btn-whatsapp-pulse {
+  background: #25d366;
+  color: white;
+  position: fixed;
+  bottom: 35%;
+  right: 15px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  padding: 35px;
+  text-decoration: none;
+  border-radius: 50%;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+  z-index: 2;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  80% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+@media (max-width: 600px) {
+  .btn-whatsapp-pulse {
+    right: 10px;
+    bottom: 40%;
+    padding: 25px;
+  }
+}
 .mobile-number-input {
   display: inline-block;
   position: relative;
@@ -549,6 +586,33 @@ table {
 .buying-rate p i {
   font-size: 16px;
 }
+.market-data {
+  margin-top: 0.8em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  width: 80%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 400;
+}
+/* Warning */
+.warning-icon {
+  animation: fade-in-out 2s ease infinite;
+}
+
+@keyframes fade-in-out {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
 
 /* table */
 
@@ -591,7 +655,7 @@ table {
 
 @media (max-width: 600px) {
   #customers {
-    margin-top: 10px;
+    margin-top: 8px;
   }
   #customers td,
   #customers th {
@@ -606,6 +670,9 @@ table {
   }
 }
 @media (min-width: 1000px) {
+  #customers {
+    margin-top: -10px;
+  }
   #customers td,
   #customers th {
     padding: 5px 30px;
