@@ -3243,7 +3243,7 @@ footer.inner-footer.footer::before {
 .copyright {
   padding: 22px 0 65px 0;
   margin-top: 35px;
-  color: #b7565f;
+  color: #ad8536;
   font-size: 15px;
   font-weight: 500;
   position: relative;
@@ -3259,7 +3259,8 @@ footer.inner-footer.footer::before {
 }
 .copyright p {
   margin-bottom: 0;
-  color: #b7565f;
+  font-size: 15px;
+  color: #ad8536;
 }
 
 .page-about-us .partner-support-section {
@@ -3310,7 +3311,7 @@ footer.inner-footer.footer::before {
 }
 .std_code .selectboxit-list > .selectboxit-focus > .selectboxit-option-anchor {
   color: #ffffff;
-  background: #a6454f;
+  background: #ad8536;
 }
 .std_code
   .selectboxit-container
@@ -3802,8 +3803,7 @@ footer.inner-footer.footer::before {
     padding: 10px 0 10px 0;
   }
 }
-@media (min-width: 992px) {
-}
+
 @media (max-width: 1199px) {
   .blog .blog-detail .blog-bottom ul li {
     padding: 0 10px;

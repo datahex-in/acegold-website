@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <!-- Mirrored from www.ace gold.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 16 Aug 2023 05:07:31 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
@@ -19,11 +17,13 @@
   <meta property="og:url" content="index.html" />
   <meta property="og:site_name" content="www.ace gold.com" />
   <meta name="csrf-token" content="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
-  <!-- Google Tag Manager -->
+
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
 
 
   <!-- <script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous"></script> -->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.5.0/socket.io.js" integrity="sha512-ttqbKrGZiTtSLguBZ2xNvZrhUv02IO/TRq5U6TG5TK90wbaXWup5kIJ1A1tLzjOk5Mea/G4seVNrU+lwTLfAzA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     (function(w, d, s, l, i) {
@@ -83,7 +83,7 @@
   </script>
 
   <!-- End Facebook Pixel Code -->
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/media/original/public/site/Ace gold Logo Transparent.png">
   <link rel="shortcut icon" type="image/x-icon" href="/media/original/public/site/Ace gold Logo Transparent.png">
   <link href="css/select2.css" rel="stylesheet">
@@ -97,7 +97,7 @@
   <link href="css/theme.css" rel="stylesheet">
   <style type="text/css">
     .quickbuy-block:before {
-      background-image: url(media/original/public/content/K7rF16ghsIIqIMw3QfhLuwFo8C5HjVVSb3Wik1Nq.png);
+      background-image: url("/images/ACE\ Gold\ Logo\ Transparent.png");
     }
 
     /* cyrillic-ext */
@@ -838,26 +838,17 @@
               <div class="banner-head-info">
                 <h4 class="section-title with-line">About Us
                 </h4>
-
                 <h1 class="head-title">
-
                   Trusted Billion Dealers in the UAE and Oman
                 </h1>
                 <p><span style="line-height: 28px;">Serving the precious metals industry for years, Ace gold is a leading bullion dealer in the United Arab Emirates and Oman. Renowned for our superior service, competitive pricing, and wide selection, we proudly offer an unrivaled range of bullion products to cater to both seasoned investors and first-time buyers.</span></p>
                 <div class="btn-group-row">
-                  <!-- <form method="POST" action="#" id="send-sms-form" class="">
-                    <div class="mobile-number-input"><label for="std_code" class="std_code"><select class="country country-code-select country country-code-select " name="std_code" id="std_code">
-                          <option value="91" data-iconurl="https://www.countryflags.io/IN/shiny/64.png" data-iso="IN" selected="selected">+91</option>
-                        </select></label> <input type="text" name="home_get_app_number" maxlength="10" id="home_get_app_number" autocomplete="off" required="true" placeholder="Enter Mobile No." /></div>
-                    <button type="submit" id="send_sms_form" class="btn btn-default btn-white btn-get-app"> GET APP</button>
-                  </form> -->
                   <div class="app-store-links"><a href="https://play.google.com/store/apps/details?id=com.aiwwah.app.acegold&pcampaignid=web_share" target="_blank" class="app-link-click"> <img src="media/original/public/content/CiccJlyDzRyoDgO6BHznoMp4ZPKsifnLAEi1DHUs.png" alt="play-store" /> </a> <a href="https://apps.apple.com/in/app/ace-gold/id6449754264" target="_blank" class="app-link-click"> <img src="media/original/public/content/haE4wggle79m3fPIgsbEqcqeZOOlWg48AQUq1bBy.png" alt="apple-store" /> </a></div>
                 </div>
               </div>
             </div>
             <div class="col-lg-5 col-md-6">
               <div class="buy-gold-silver">
-
                 <!-- Tab panes -->
                 <div class="container">
                   <div class="row">
@@ -899,6 +890,10 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div class="market-data" id="market_data_items">
+                    <i class="fa fa-exclamation-circle warning-icon"></i>
+                    Market Closed
                   </div>
                 </div>
                 <form method="POST" action="https://www.ace gold.com/buygold/confirm" accept-charset="UTF-8" id="buy-gold-form" class="quick-action-form" enctype="multipart/form-data"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
@@ -971,7 +966,15 @@
 
                   // Listen for "message" event from the server
                   socket.on("message", (data) => {
-                    console.log(data);
+                    console.log(data.MARKET);
+                    let market = document.getElementById('market_data_items')
+                    market.style.display = 'none';
+
+                    if (!data.MARKET) {
+                      let market = document.getElementById('market_data_items')
+                      market.style.display = 'block';
+                      market.style.color = 'red';
+                    }
 
                     //price-high
                     let dataPriceHigh = document.getElementById('data-high');
@@ -1072,79 +1075,66 @@
             </div>
           </div>
         </div>
+
+    </div>
+    <div class="btn enquiry-wa ">
+      <a href="https://wa.me/+971542793940" target="_blank" class="btn-whatsapp-pulse">
+        <i class="fab fa-whatsapp"></i>
+      </a>
     </div>
   </div>
-
-
   <section class="offer-slide-section">
     <div class="offer-slider">
-
       <a href="javascript:void(0);">
         <div class="offer-content" style="background-image: url('media/original/public/offers/qxqD4sUm1JHOPsI5xBZzT3G5OI0Ehz5TQXR5ItgT.webp');">
           <div class="container">
             <div class="row">
               <div class="col-md-7">
                 <div class="offer-info">
-
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </a>
-
       <a href="buygold.html">
         <div class="offer-content" style="background-image: url('media/original/public/offers/2b2Bj9InWRvjeCQjicX8NRcCJeqsRWYTvq25pXHP.jpg');">
           <div class="container">
             <div class="row">
               <div class="col-md-7">
                 <div class="offer-info">
-
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </a>
-
       <a href="https://ace gold.page.link/qbvQ">
         <div class="offer-content" style="background-image: url('media/original/public/offers/vjIt6N8g3eMpJPT1t5iXIDtL81fgAIzxV7Hd8Imn.jpg');">
           <div class="container">
             <div class="row">
               <div class="col-md-7">
                 <div class="offer-info">
-
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </a>
-
       <a href="https://ace gold.page.link/qbvQ">
         <div class="offer-content" style="background-image: url('media/original/public/offers/03YkCDFi0hzi4SVP3tzwmS1t5puGsRmdr5gPRcc4.webp');">
           <div class="container">
             <div class="row">
               <div class="col-md-7">
                 <div class="offer-info">
-
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </a>
-
-
     </div>
   </section>
-
-
-
   <section class="why-us-section">
     <div class="container">
       <div class="row">
@@ -1216,7 +1206,6 @@
         <div class="col-md-12">
           <h4 class="section-title with-line">Our Products</h4>
         </div>
-
         <% apiData.forEach(product => { %>
         <div class="col-md-3 col-sm-6">
           <div class="gold-buy-content">
@@ -1228,7 +1217,6 @@
           </div>
         </div>
         <% }); %>
-
       </div>
     </div>
   </section>
@@ -1251,64 +1239,51 @@
   </section>
   </div>
   </div>
-
-
   <div class="modal fade" id="popup-register-form-popup" tabindex="-1" role="dialog" aria-labelledby="popup-register-form-popupModalLabel" aria-hidden="true">
     <div class="vertical-alignment-helper">
       <div class="modal-dialog vertical-align-center">
         <div class="modal-content">
-
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <p class="h2model text-center">Sign Up</p>
           </div>
-
           <div class="modal-body">
-            <form method="POST" action="https://www.ace gold.com/popup/register" accept-charset="UTF-8" id="popup-register-form" class="form-tag form-horizontal" role="form"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
-
+            <form method="POST" action="https://info@myacegold.com/popup/register" accept-charset="UTF-8" id="popup-register-form" class="form-tag form-horizontal" role="form"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
               <div class="form-group">
                 <div class="row">
-
                   <div class="col-sm-6  col-xs-12">
                     <div class="input-group">
                       <input class="form-control" id="first_name" placeholder="First name" required name="first_name" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-6 col-xs-12">
                     <div class="input-group">
-                      <!-- <input class="form-control" id="middle_name" placeholder="Middle name" required name="middle_name" type="text"> -->
                       <input class="form-control" id="middle_name" placeholder="Middle name" name="middle_name" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <input class="form-control" id="last_name" placeholder="Last name" required name="last_name" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <label for="std_code" class="std_code"><select class="country country-code-select country country-code-select" name="std_code" id="std_code">
-                          <option value="91" data-iconurl="https://www.countryflags.io/IN/shiny/64.png" data-iso="IN" selected="selected">+91</option>
+                          <option value="968" data-iconurl="https://www.countryflags.io/IN/shiny/64.png" data-iso="IN" selected="selected">+968</option>
                         </select></label>
                       <input class="form-control" id="mobile_number" placeholder="Enter 10 digit mobile number" required name="mobile_number" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <input class="form-control" id="email" placeholder="Email Address" name="email" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-6  col-xs-12">
                     <div class="input-group">
                       <input class="dob form-control" id="birth_date" placeholder="Birth Date" readonly="readonly" name="birth_date" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-6  col-xs-12">
                     <div class="input-group">
                       <select class="form-control" id="gender" name="gender">
@@ -1318,7 +1293,6 @@
                       </select>
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="checkbox-col">
                       <input class="checkbox" id="accpet_tc" required name="accpet_tc" type="checkbox" value="1">
@@ -1326,30 +1300,23 @@
                       </label>
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <div class="g-recaptcha" data-sitekey="6LccUnkaAAAAAEjYxMTxvEBukN-ORwWF5Cf4yL9D" data-callback="signup_recaptcha_callback" data-expired-callback="signup_expired_recaptcha_callback"></div>
                       <input class="hiddenRecaptcha required" id="hiddenSignupRecaptcha" name="hiddenSignupRecaptcha" type="hidden" value="">
                     </div>
                   </div>
-
                 </div>
               </div>
-
               <div class="form-group text-center">
                 <button type="submit" id="popup-register-form-btn" class="btn btn-default">Send OTP</button>
                 <img src="media/original/public/site/3KEYG56QtPPBKZpBR61UTggGfloaderondasd.gif" id="popup-register-form-loader" class="site-loader">
               </div>
-
             </form>
-
             <div class="form-group text-center">
               <a href="javascript:void:;" id="open-login-form" class="already-account">I already have an account <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
             </div>
-
           </div>
-
         </div>
       </div>
     </div>
@@ -1358,18 +1325,14 @@
     <div class="vertical-alignment-helper">
       <div class="modal-dialog vertical-align-center">
         <div class="modal-content">
-
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <p class="h2model text-center">Login</p>
           </div>
-
           <div class="modal-body">
-            <form method="POST" action="https://www.ace gold.com/popup/login" accept-charset="UTF-8" id="popup-login-form" class="form-tag form-horizontal" role="form"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
-
+            <form method="POST" action="https://info@myacegold.com/popup/login" accept-charset="UTF-8" id="popup-login-form" class="form-tag form-horizontal" role="form"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
               <div class="form-group">
                 <div class="row">
-
                   <div class="col-sm-12  col-xs-12">
                     <div class="input-group">
                       <label for="login_std_code" class="std_code"><select class="country country-code-select country country-code-select" name="login_std_code" id="login_std_code">
@@ -1378,21 +1341,18 @@
                       <input class="form-control" id="login_mobile_number" placeholder="Enter 10 digit mobile number" required name="login_mobile_number" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="checkbox-col">
                       <input class="checkbox" id="login_remember" name="login_remember" type="checkbox" value="1">
                       <label for="login_remember" class="label">Remember</label>
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <div class="g-recaptcha" data-sitekey="6LccUnkaAAAAAEjYxMTxvEBukN-ORwWF5Cf4yL9D" data-callback="login_recaptcha_callback" data-expired-callback="login_expired_recaptcha_callback"></div>
                       <input class="hiddenRecaptcha required" id="hiddenLoginRecaptcha" name="hiddenLoginRecaptcha" type="hidden" value="">
                     </div>
                   </div>
-
                 </div>
               </div>
               <div class="form-group text-center">
@@ -1402,11 +1362,8 @@
               <div class="form-group text-center">
                 <a href="javascript:void:;" id="open-sign-up-form" class="already-account">I don’t have an account <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
               </div>
-
             </form>
-
           </div>
-
         </div>
       </div>
     </div>
@@ -1415,15 +1372,12 @@
     <div class="vertical-alignment-helper">
       <div class="modal-dialog vertical-align-center">
         <div class="modal-content">
-
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <p class="h2model text-center">Verify OTP</p>
           </div>
-
           <div class="modal-body">
-            <form method="POST" action="https://www.ace gold.com/popup/verify/otp" accept-charset="UTF-8" id="popup-verify-otp-form" class="form-tag form-horizontal" role="form"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
-
+            <form method="POST" action="https://info@myacegold.compopup/verify/otp" accept-charset="UTF-8" id="popup-verify-otp-form" class="form-tag form-horizontal" role="form"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
               <input class="required" id="otp_id" name="otp_id" type="hidden" value="">
               <input class="required" id="otp_std_code" name="otp_std_code" type="hidden" value="">
               <div class="form-group">
@@ -1433,37 +1387,30 @@
                       We have sent you OTP on your mobile number <span id="mobile_number_span"></span>. <a href="javascript:void:;" class="change-mobile-number-link">Edit</a>
                     </div>
                   </div>
-
                   <div class="col-sm-12" id="editable_mobile">
                     <div class="input-group">
                       <input class="form-control" id="otp_mobile_number" placeholder="Enter 10 digit mobile number" required readonly name="otp_mobile_number" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <input class="form-control" id="otp" placeholder="Enter OTP" name="otp" type="text">
                       <a class="resend_otp" href="javascript:void:;">Resend OTP</a>
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <div class="g-recaptcha" data-sitekey="6LccUnkaAAAAAEjYxMTxvEBukN-ORwWF5Cf4yL9D" data-callback="signup_otp_recaptcha_callback" data-expired-callback="signup_otp_expired_recaptcha_callback"></div>
                       <input class="hiddenRecaptcha required" id="hiddenSignupOTPRecaptcha" name="hiddenSignupOTPRecaptcha" type="hidden" value="">
                     </div>
                   </div>
-
                 </div>
               </div>
-
               <div class="form-group text-center">
                 <button type="submit" class="btn btn-default" id="popup-verify-otp-form-btn">Verify</button>
                 <img src="media/original/public/site/3KEYG56QtPPBKZpBR61UTggGfloaderondasd.gif" id="popup-verify-otp-form-loader" class="site-loader">
               </div>
-
             </form>
-
             <div style="display: none;">
               <form method="POST" action="https://www.ace gold.com/popup/resend/otp" accept-charset="UTF-8" id="popup-resend-otp-form" class="form-tag form-horizontal" role="form"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
                 <input class="required" id="resend_mobile_number" name="resend_mobile_number" type="hidden" value="">
@@ -1471,9 +1418,7 @@
                 <input class="required" id="resend_id" name="resend_id" type="hidden" value="">
               </form>
             </div>
-
           </div>
-
         </div>
       </div>
     </div>
@@ -1482,41 +1427,33 @@
     <div class="vertical-alignment-helper">
       <div class="modal-dialog vertical-align-center">
         <div class="modal-content">
-
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             <p class="h2model text-center">Change Mobile Number</p>
           </div>
-
           <div class="modal-body">
             <form method="POST" action="https://www.ace gold.com/popup/change/mobile" accept-charset="UTF-8" id="popup-change-mobile-number-form" class="form-tag form-horizontal" role="form"><input name="_token" type="hidden" value="LA6GQmE3e14QBBBhwHeBMf4sioyEvj5iuyGu4aL7">
-
               <input class="required" id="old_std_code" name="old_std_code" type="hidden" value="">
               <input class="required" id="old_mobile_number" name="old_mobile_number" type="hidden" value="">
               <input class="required" id="mobile_id" name="mobile_id" type="hidden" value="">
-
               <div class="form-group">
                 <div class="row">
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <label class="std_code"><select class="country country-code-select country country-code-select" name="new_std_code" id="new_std_code">
-                          <option value="91" data-iconurl="https://www.countryflags.io/IN/shiny/64.png" data-iso="IN" selected="selected">+91</option>
+                          <option value="91" data-iconurl="https://www.countryflags.io/IN/shiny/64.png" data-iso="IN" selected="selected">+968</option>
                         </select></label>
                       <input class="form-control" id="new_mobile_number" placeholder="Enter 10 digit mobile number" required name="new_mobile_number" type="text">
                     </div>
                   </div>
-
                   <div class="col-sm-12">
                     <div class="input-group">
                       <div class="g-recaptcha" data-sitekey="6LccUnkaAAAAAEjYxMTxvEBukN-ORwWF5Cf4yL9D" data-callback="change_mn_recaptcha_callback" data-expired-callback="change_mn_expired_recaptcha_callback"></div>
                       <input class="hiddenRecaptcha required" id="hiddenChangeMNRecaptcha" name="hiddenChangeMNRecaptcha" type="hidden" value="">
                     </div>
                   </div>
-
                 </div>
               </div>
-
               <div class="form-group text-center">
                 <button type="submit" id="popup-change-mobile-number-form-btn" class="btn btn-default">Submit</button>
                 <img src="media/original/public/site/3KEYG56QtPPBKZpBR61UTggGfloaderondasd.gif" id="popup-change-mobile-number-form-loader" class="site-loader">
@@ -1524,18 +1461,13 @@
               <div class="form-group text-center">
                 <a href="javascript:void:;" id="open-login-form" class="already-account">I already have an account <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
               </div>
-
-
             </form>
-
           </div>
-
         </div>
       </div>
     </div>
   </div>
   </section>
-
   </div>
   <!-- ========== Start footer ========== -->
   <%-include('layouts/footer.ejs')%>
@@ -1545,8 +1477,8 @@
       <div class="modal-content">
         <div class="modal-body jeweller_model_ad">
           <button type="button" class="adclosebtn" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-          <a href="jewellers-program.html">
-            <img src="images/DGpopup.jpg" width="100%"></a>
+          <a href="/">
+            <img src="/images/ACE Gold Logo Transparent.png" width="100%"></a>
         </div>
       </div>
     </div>
